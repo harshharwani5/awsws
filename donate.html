@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="color-scheme" content="light">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate Now & Track Your Impact | Alveera Education & Social Welfare Society (AESWS)</title>
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="stylesheet" href="css/aesws_style.css">
+  <style>
+    .donation-page-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 35px;
+      align-items: flex-start;
+    }
+    @media (max-width: 900px) {
+      .donation-page-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .accordion-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    .accordion-header {
+      padding: 16px 20px;
+      font-weight: 700;
+      color: #0f172a;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+    }
+    .accordion-body {
+      padding: 0 20px 16px 20px;
+      color: var(--slate);
+      font-size: 14px;
+      display: none;
+      line-height: 1.5;
+    }
+    .accordion-item.active .accordion-body {
+      display: block;
+    }
+    .accordion-item.active .accordion-header {
+      color: #ea580c;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div>
+        <span class="top-badge">Tax Exemption</span>
+        <span>All donations to AESWS are 50% tax exempt under Section 80G. Instant Form 10BE receipt issued.</span>
+      </div>
+      <div class="top-links">
+        <a href="news-events.html">📰 News & Events</a>
+        <a href="impact.html" data-i18n="nav_impact">📊 Transparency Report</a>
+        <a href="tel:+919479812743">📞 +91 94798 12743</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="index.html" class="logo-brand">
+        <img src="images/logo.svg" alt="AESWS Logo" class="logo-img">
+        <div class="logo-text-wrap">
+          <div class="logo-title">AESWS<span>.</span></div>
+          <div class="logo-subtitle">Alveera Education & Social Welfare Society</div>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="about.html" data-i18n="nav_about">About</a></li>
+        <li><a href="programs.html" data-i18n="nav_programs">Programs</a></li>
+        <li><a href="impact.html" data-i18n="nav_impact_nav">Impact</a></li>
+        <li><a href="news-events.html" data-i18n="nav_news_nav">News & Events</a></li>
+        <li><a href="get-involved.html" data-i18n="nav_involved">Get Involved</a></li>
+        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="hi">HI</button>
+        </div>
+        <a href="donate.html" class="btn btn-donate" data-i18n="nav_donate_btn">❤️ Donate Now</a>
+        <button class="mobile-toggle" id="mobileToggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header" style="background: linear-gradient(135deg, #14532d 0%, #0f172a 100%);">
+    <div class="container">
+      <h1>Transparent Unitized Giving with AESWS</h1>
+      <p>Know exactly where your money goes before donating. Every single rupee is mapped to tangible meals, school days, and medical kits.</p>
+    </div>
+  </section>
+
+  <!-- MAIN DONATION FUNNEL -->
+  <section class="section">
+    <div class="container">
+      <div class="donation-page-grid">
+        
+        <!-- LEFT: INTERACTIVE DONATION & IMPACT ENGINE -->
+        <div style="background: white; border-radius: var(--radius-lg); padding: 32px; border: 1px solid var(--border); box-shadow: var(--shadow-md); border-top: 5px solid #ea580c;">
+          
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; flex-wrap:wrap; gap:8px;">
+            <h2 style="font-size: 24px; margin: 0;">Select Contribution Amount</h2>
+            <span style="font-size: 12px; font-weight: 700; color: var(--brand-green); background: var(--brand-green-subtle); padding: 3px 8px; border-radius: 20px;">✓ 100% Direct Program Allocation</span>
+          </div>
+          <p style="color: var(--muted); font-size: 14px; margin-bottom: 20px;">Watch the real-world outcome update in real time as you adjust the amount.</p>
+
+          <!-- TABS -->
+          <div class="donate-tabs" style="margin-bottom: 20px;">
+            <div class="donate-tab active">Give Once</div>
+            <div class="donate-tab">Monthly Supporter (Recommended)</div>
+          </div>
+
+          <!-- UNITIZED PRESET BUTTONS WITH IMPACT LABELS -->
+          <label class="form-label">Popular Giving Amounts:</label>
+          <div class="amount-grid" style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; margin-bottom: 16px;">
+            <button type="button" class="amount-btn" data-amount="100">₹100 <br><small style="font-size:10.5px; font-weight:normal; opacity:0.85;">1 Kid Meal</small></button>
+            <button type="button" class="amount-btn" data-amount="250">₹250 <br><small style="font-size:10.5px; font-weight:normal; opacity:0.85;">2 Meals + Fruit</small></button>
+            <button type="button" class="amount-btn active" data-amount="500">₹500 <br><small style="font-size:10.5px; font-weight:normal; opacity:0.85;">1 Day Family Rations</small></button>
+            <button type="button" class="amount-btn" data-amount="1000">₹1,000 <br><small style="font-size:10.5px; font-weight:normal; opacity:0.85;">1 Wk Family Grocery</small></button>
+            <button type="button" class="amount-btn" data-amount="1500">₹1,500 <br><small style="font-size:10.5px; font-weight:normal; opacity:0.85;">1 Mo School & Lunch</small></button>
+            <button type="button" class="amount-btn" data-amount="2500">₹2,500 <br><small style="font-size:10.5px; font-weight:normal; opacity:0.85;">2 Elder Health Check</small></button>
+            <button type="button" class="amount-btn" data-amount="5000">₹5,000 <br><small style="font-size:10.5px; font-weight:normal; opacity:0.85;">Mother Sewing Kit</small></button>
+            <button type="button" class="amount-btn" data-amount="10000">₹10,000 <br><small style="font-size:10.5px; font-weight:normal; opacity:0.85;">Digital Learning Tab</small></button>
+          </div>
+
+          <!-- SLIDER CONTROL -->
+          <div class="range-slider-wrap">
+            <label class="form-label" style="display:flex; justify-content:space-between;">
+              <span>Interactive Amount Slider:</span>
+              <strong style="color: #ea580c;">Slide to Adjust</strong>
+            </label>
+            <input type="range" id="impactSlider" class="impact-slider" min="100" max="10000" step="100" value="500">
+            <div class="slider-labels">
+              <span>₹100</span>
+              <span>₹2,500</span>
+              <span>₹5,000</span>
+              <span>₹10,000</span>
+            </div>
+          </div>
+
+          <!-- CUSTOM INPUT -->
+          <div class="form-group" style="margin-bottom: 16px;">
+            <label class="form-label">Or Type Exact Custom Amount (₹)</label>
+            <input type="number" id="customAmount" class="form-control" placeholder="Enter custom amount in Rupees" value="500">
+          </div>
+
+          <!-- LIVE DYNAMIC IMPACT BREAKDOWN BOX -->
+          <div class="impact-breakdown-card" style="padding: 18px; margin-bottom: 22px;">
+            <div class="impact-hero-headline">
+              <div id="heroImpactIcon" class="impact-icon-badge">🍲</div>
+              <div>
+                <span id="heroImpactHeadline" style="font-size: 15.5px;">₹500: 1 Full Day of Meals for an Entire Family of 5</span>
+              </div>
+            </div>
+            <p id="heroImpactDesc" style="font-size: 13.5px; color: #9a3412; margin-bottom: 12px; line-height: 1.45;">
+              Provides breakfast, lunch, and dinner food rations for a destitute family of five.
+            </p>
+            
+            <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--brand-green); letter-spacing: 0.5px; margin-bottom: 6px;">
+              📊 Computed Tangible Deliverables:
+            </div>
+
+            <div class="impact-metrics-row" style="grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+              <div class="impact-mini-metric">
+                <span>🍛</span>
+                <strong id="metricMeals">5 Hot Meals</strong>
+              </div>
+              <div class="impact-mini-metric">
+                <span>📚</span>
+                <strong id="metricSchool">10 School Days</strong>
+              </div>
+              <div class="impact-mini-metric">
+                <span>🏠</span>
+                <strong id="metricFamilies">1 Family Day</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- DONOR FORM -->
+          <h3 style="font-size: 18px; margin-bottom: 14px; padding-top: 10px; border-top: 1px solid var(--border);">Donor Details (for 80G Receipt)</h3>
+          
+          <form id="mockCheckoutForm">
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input type="text" id="donorName" class="form-control" placeholder="e.g. Anjali Sharma" required>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px;">
+              <div class="form-group">
+                <label class="form-label">Email Address *</label>
+                <input type="email" id="donorEmail" class="form-control" placeholder="yourname@gmail.com" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">WhatsApp / Mobile Number *</label>
+                <input type="tel" id="donorPhone" class="form-control" placeholder="+91 94798 12743" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">PAN Card Number (For 80G Tax Exemption)</label>
+              <input type="text" id="donorPan" class="form-control" placeholder="ABCDE1234F" style="text-transform: uppercase;">
+              <small style="color: var(--muted); font-size: 12px;">Required by Income Tax Department to issue Form 10BE tax certificate.</small>
+            </div>
+
+            <!-- PAYMENT GATEWAY BADGE -->
+            <div style="background: #fff7ed; border: 1.5px solid #fed7aa; border-radius: 8px; padding: 12px 14px; margin-bottom: 16px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                <span style="font-weight: 700; font-size: 13px; color: #9a3412; display: flex; align-items: center; gap: 6px;">
+                  ⚡ Powered by Razorpay Checkout
+                </span>
+                <span style="background: #22c55e; color: white; font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 10px;">256-Bit SSL</span>
+              </div>
+              <p style="font-size: 12px; color: #7c2d12; margin: 0; line-height: 1.4;">
+                Supports UPI (GPay, PhonePe, Paytm, BHIM), Credit/Debit Cards (Visa, Mastercard, RuPay), and NetBanking.
+              </p>
+            </div>
+
+            <button type="submit" id="donateSubmitBtn" class="btn btn-donate" style="width: 100%; font-size: 17px; padding: 15px; margin-top: 6px;">
+              Proceed to Razorpay Checkout (<span id="btnAmountDisplay">₹500</span>) →
+            </button>
+          </form>
+
+          <!-- SUCCESS & INSTANT 80G RECEIPT STATE -->
+          <div id="checkoutSuccess" style="display: none; text-align: center; padding: 20px 5px;">
+            <div style="font-size: 50px; margin-bottom: 8px;">🎉</div>
+            <h3 style="color: var(--brand-green); font-size: 22px; margin-bottom: 6px;">Donation Successful!</h3>
+            <p style="color: var(--slate); font-size: 14px; margin-bottom: 16px;">
+              Thank you, <strong id="successDonorName">Donor</strong>! Your generous contribution of <strong id="successDonorAmount" style="color: #ea580c;">₹500</strong> has been processed via Razorpay.
+            </p>
+            
+            <!-- OFFICIAL 80G RECEIPT SLIP -->
+            <div id="printableReceipt" style="background: white; border: 2px dashed #cbd5e1; border-radius: 8px; padding: 18px; text-align: left; margin-bottom: 20px; font-size: 13px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 12px;">
+                <div>
+                  <strong style="color: #0f172a; font-size: 15px;">Alveera Education & Social Welfare Society</strong><br>
+                  <small style="color: #64748b;">Reg. No: 01/07/04/23424/11 • 80G URN: AADAA6183E25BP02 • PAN: AADAA6183E</small>
+                </div>
+                <div style="text-align: right;">
+                  <span style="background: #ecfdf5; color: #047857; font-weight: 700; font-size: 11px; padding: 3px 8px; border-radius: 12px; border: 1px solid #a7f3d0;">
+                    ✓ 80G Tax Exempt
+                  </span>
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12.5px; margin-bottom: 12px;">
+                <div><strong>Donor Name:</strong> <span id="receiptDonorName">-</span></div>
+                <div><strong>Donation Date:</strong> <span id="receiptDate">-</span></div>
+                <div><strong>Amount Donated:</strong> <span id="receiptAmount" style="color: #ea580c; font-weight: 700;">-</span></div>
+                <div><strong>PAN Number:</strong> <span id="receiptPan">-</span></div>
+                <div><strong>Razorpay Payment ID:</strong> <span id="receiptPaymentId" style="font-family: monospace; color: #0369a1;">-</span></div>
+                <div><strong>80G Receipt Number:</strong> <span id="receiptNumber" style="font-family: monospace;">-</span></div>
+              </div>
+
+              <div style="background: #f8fafc; padding: 8px 10px; border-radius: 4px; font-size: 11px; color: #64748b;">
+                ℹ️ <em>This receipt serves as valid tax deduction proof under Section 80G of the Indian Income Tax Act (URN: AADAA6183E25BP02). Form 10BE certificate filed with Income Tax Department.</em>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
+              <button id="downloadPdfBtn" class="btn btn-primary" style="flex: 1; padding: 12px; font-size: 14px;">
+                🖨️ Download 80G Receipt (PDF)
+              </button>
+              <a id="sendWhatsAppReceiptBtn" href="#" target="_blank" class="btn" style="flex: 1; padding: 12px; font-size: 14px; background: #22c55e; color: white; border: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none;">
+                <span>💬</span> Send Receipt on WhatsApp
+              </a>
+            </div>
+            
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <a id="verifyWhatsAppBtn" href="#" target="_blank" class="btn btn-outline" style="flex: 1; padding: 10px; font-size: 13px; text-align: center; color: #15803d; border-color: #86efac; background: #f0fdf4;">
+                📲 Contact AESWS Support on WhatsApp
+              </a>
+              <a href="index.html" class="btn btn-outline" style="flex: 1; padding: 10px; font-size: 13px; text-align: center;">
+                Return to Home
+              </a>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 18px;">
+            <span style="font-size: 12px; color: var(--muted);">🔒 256-Bit Bank-Grade Razorpay Encryption | Instant 80G Certificate</span>
+          </div>
+        </div>
+
+        <!-- RIGHT: TRUST, BANK OF INDIA DETAILS & 80G TAX CALCULATOR -->
+        <div>
+          
+          <!-- OFFICIAL BANK OF INDIA NEFT/RTGS ACCOUNT CARD -->
+          <div style="background: white; border: 1.5px solid var(--brand-green-border); border-radius: var(--radius-lg); padding: 24px; margin-bottom: 24px; box-shadow: var(--shadow-sm); border-top: 4px solid var(--brand-green);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+              <span style="background: var(--brand-green-subtle); color: var(--brand-green); font-size: 11px; font-weight: 800; text-transform: uppercase; padding: 2px 8px; border-radius: 20px;">
+                Direct Bank Transfer (NEFT / RTGS / IMPS)
+              </span>
+              <span style="font-size: 20px;">🏦</span>
+            </div>
+            <h3 style="font-size: 18px; color: #0f172a; margin: 0 0 12px 0;">Official Bank of India Account</h3>
+            
+            <div style="font-size: 13px; display:flex; flex-direction:column; gap:6px; color: var(--slate);">
+              <div><strong>Account Name:</strong> <span style="color:#0f172a;">Alveera Education and Social Welfare Society</span></div>
+              <div><strong>Account Number:</strong> <code style="font-size: 14px; color: #0369a1; font-weight: 800; background:#f0f9ff; padding:2px 6px; border-radius:4px;">905610110002190</code></div>
+              <div><strong>IFSC Code:</strong> <code style="font-size: 14px; color: #0369a1; font-weight: 800; background:#f0f9ff; padding:2px 6px; border-radius:4px;">BKID0009056</code></div>
+              <div><strong>Bank & Branch:</strong> Bank of India, Sohagpur Branch</div>
+              <div><strong>PAN:</strong> <code style="font-weight:700;">AADAA6183E</code> | <strong>TAN:</strong> <code style="font-weight:700;">BPLA18301D</code></div>
+            </div>
+            <div style="background: #f8fafc; padding: 8px 10px; border-radius: 6px; font-size: 11.5px; color: var(--muted); margin-top: 10px;">
+              After transferring, please WhatsApp your UTR slip to <strong>+91 94798 12743</strong> for instant 80G receipt generation.
+            </div>
+          </div>
+
+          <!-- 80G TAX CALCULATOR CARD -->
+          <div style="background: linear-gradient(135deg, #fef3c7, #fde68a); border: 1px solid #fcd34d; border-radius: var(--radius-lg); padding: 24px; margin-bottom: 24px;">
+            <span style="background: #ea580c; color: white; font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 2px 8px; border-radius: 20px;">Tax Advantage</span>
+            <h3 style="font-size: 19px; color: #78350f; margin: 8px 0 6px 0;">50% Income Tax Exemption</h3>
+            <p style="color: #92400e; font-size: 13.5px; line-height: 1.45; margin-bottom: 10px;">
+              Under Section 80G of the Indian Income Tax Act (URN: <strong style="font-family:monospace;">AADAA6183E25BP02</strong>), 50% of your total donation to AESWS is directly deductible from your taxable income.
+            </p>
+            <div style="background: white; padding: 10px; border-radius: 6px; font-size: 12.5px; color: #78350f;">
+              <strong>Example:</strong> A contribution of ₹10,000 reduces your taxable income by ₹5,000 under Form 10BE.
+            </div>
+          </div>
+
+          <!-- TRUST BADGES -->
+          <div style="background: var(--light); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 22px; margin-bottom: 24px;">
+            <h3 style="font-size: 17px; margin-bottom: 12px;">Institutional Credentials</h3>
+            <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13.5px;">
+              <div style="display: flex; gap: 10px; align-items: flex-start;">
+                <span style="color: var(--brand-green); font-weight: 700;">✓</span>
+                <span><strong>Regd. Society (2011):</strong> Reg. No. <code>01/07/04/23424/11</code></span>
+              </div>
+              <div style="display: flex; gap: 10px; align-items: flex-start;">
+                <span style="color: var(--brand-green); font-weight: 700;">✓</span>
+                <span><strong>NITI Aayog DARPAN ID:</strong> <code>MP/2018/0197190</code></span>
+              </div>
+              <div style="display: flex; gap: 10px; align-items: flex-start;">
+                <span style="color: var(--brand-green); font-weight: 700;">✓</span>
+                <span><strong>MCA CSR Registration:</strong> <code>CSR00048605</code></span>
+              </div>
+              <div style="display: flex; gap: 10px; align-items: flex-start;">
+                <span style="color: var(--brand-green); font-weight: 700;">✓</span>
+                <span><strong>Income Tax 12A URN:</strong> <code>AADAA6183E25BP01</code></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQS ACCORDION -->
+          <h3 style="font-size: 19px; margin-bottom: 12px;">Frequently Asked Questions</h3>
+          
+          <div class="accordion-item active">
+            <div class="accordion-header">
+              <span>How do I know my donation reaches the beneficiaries?</span>
+              <span>+</span>
+            </div>
+            <div class="accordion-body">
+              Every donor receives audited utilization receipts and program updates detailing how contributions directly power Project Udyam Udaan workshops, slum classrooms, and free health checkups.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span>When will I receive my 80G Tax Exemption Receipt?</span>
+              <span>+</span>
+            </div>
+            <div class="accordion-body">
+              Your 80G tax receipt and Form 10BE certificate are emailed and sent to your WhatsApp number within 60 seconds of successful transaction.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span>Can organizations donate via CSR?</span>
+              <span>+</span>
+            </div>
+            <div class="accordion-body">
+              Yes. AESWS holds an approved CSR-1 registration (Reg. <strong>CSR00048605</strong>) with the Ministry of Corporate Affairs for eligible CSR project grants.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STICKY MOBILE BOTTOM BAR -->
+  <div class="mobile-bottom-bar">
+    <div class="bar-info">
+      <strong>AESWS Bhopal</strong>
+      <span>80G Tax Exemption</span>
+    </div>
+    <div class="bar-actions">
+      <a href="https://wa.me/919479812743" target="_blank" class="btn-mobile-wa">💬 WhatsApp</a>
+      <a href="#donateFormSection" class="btn-mobile-donate trigger-donation">❤️ Donate</a>
+    </div>
+  </div>
+
+  <!-- FLOATING WHATSAPP CHAT BUTTON -->
+  <a href="https://wa.me/919479812743" target="_blank" class="floating-whatsapp" aria-label="Chat on WhatsApp" title="Chat with AESWS on WhatsApp">
+    💬
+  </a>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:15px;">
+            <img src="images/logo.svg" alt="AESWS Logo" style="width:48px; height:48px; background:white; border-radius:50%; padding:2px;">
+            <div>
+              <h3 style="margin:0; font-size:20px; color:white;">AESWS.</h3>
+              <span style="font-size:11px; color:#ea580c; font-weight:600; text-transform:uppercase;">Alveera Education & Social Welfare Society</span>
+            </div>
+          </div>
+          <p><strong>Regd. Office:</strong> 786, Gram Langha Bamori, Post Sohagpur, Dist. Narmadapuram, MP – 461771</p>
+          <p style="margin-top:4px;"><strong>Branch Office:</strong> A-54, Shahpura Bhopal 462016</p>
+          <p style="font-size:13px; color:#cbd5e1; margin-top:8px;"><strong>Phone:</strong> +91 94798 12743 | <strong>Email:</strong> alveera82@gmail.com</p>
+        </div>
+        <div>
+          <h4 class="footer-links-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About & Governing Board</a></li>
+            <li><a href="programs.html">10 Flagship Programs</a></li>
+            <li><a href="impact.html">Impact & Audits</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-links-title">Flagship Initiatives</h4>
+          <ul class="footer-links">
+            <li><a href="programs.html">Padhega Bachpan Badhega Bharat</a></li>
+            <li><a href="programs.html">Swachh Saheli (NMDFC Vidisha)</a></li>
+            <li><a href="programs.html">Project Udyam Udaan</a></li>
+            <li><a href="programs.html">Green Kal & Nursery</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-links-title">Tax Exemptions & Bank</h4>
+          <p style="font-size: 13px; margin-bottom: 8px;">Donations are 50% tax exempt under 80G (URN: <code style="color:#fdba74;">AADAA6183E25BP02</code>).</p>
+          <div class="trust-seal" style="display:inline-block; font-size:11.5px;">Bank of India A/C: 905610110002190 • IFSC: BKID0009056</div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Alveera Education & Social Welfare Society (Reg. No. 01/07/04/23424/11). All Rights Reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PDF & RAZORPAY SDKs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="js/locales.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
